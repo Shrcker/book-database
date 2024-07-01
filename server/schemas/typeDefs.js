@@ -6,6 +6,7 @@ const typeDefs = `
     image: String
     link: String
     title: String
+    borrower: User
   }
 
   type User {
@@ -19,6 +20,12 @@ const typeDefs = `
   type Query {
     books: [Book]
     users: [User]
+    book(id: ID!): Book
+    user(id: ID!): User
+  }
+
+  type Mutation {
+    addBook(title: String!, authors: String!, description: String!, image: String!): Book
   }
 `;
 
