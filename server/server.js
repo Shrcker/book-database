@@ -6,14 +6,13 @@ const routes = require('./routes');
 const { ApolloServer } = require('@apollo/server');
 const { expressMiddleware } = require('@apollo/server/express4');
 
-// adding dependency for schemas that will be added to project later on
 const { typeDefs, resolvers } = require('./schemas');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 const server = new ApolloServer({
   typeDefs,
-  resolvers,
+  resolvers
 });
 
 const startApolloServer = async () => {
